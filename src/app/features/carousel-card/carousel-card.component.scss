@@ -1,0 +1,80 @@
+.card-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 635px;
+  height: 610px;
+  border-left: 1px solid rgb(59, 59, 59);
+  background-color: antiquewhite;
+
+  & .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    background-color: rgba(28, 28, 28, 1);
+    z-index: 1;
+
+    & .text {
+      font-size: 35px;
+      font-family: var(--g-font-family-Oranienbaum);
+      color: var(--g-colorF);
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+}
+
+.description-block {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.9s ease-in-out;
+}
+
+.card-wrapper:hover .image {
+  transform: scale(1.2);
+}
+
+.description-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  color: white;
+  z-index: 1;
+}
+
+.title {
+  font-size: 17px;
+  line-height: 35px;
+}
+.date {
+  font-family: var(--g-font-family-Oranienbaum);
+  font-size: 35px;
+  margin-top: var(--g-margin30);
+}
+.btn {
+  margin-top: var(--g-margin30);
+  padding: 28px var(--g-margin50);
+  font-size: var(--g-font-size21);
+  font-family: var(--g-font-family-Oranienbaum);
+  text-transform: uppercase;
+  font-weight: 200;
+  color: var(--g-colorF);
+  border: none;
+  cursor: pointer;
+}
+.btn-visit {
+  background-color: var(--g-background-brand);
+}
+.btn-visit:hover {
+  background-color: var(--g-background-brand2);
+}

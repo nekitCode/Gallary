@@ -1,0 +1,27 @@
+<div class="header-details_wrapper">
+  <div class="header-details_log">
+    <div class="logo">
+      <p>LOGO</p>
+    </div>
+    <div class="title">
+      <p class="title_company">Название компании</p>
+      <p class="title_description">Художественная галерея</p>
+    </div>
+  </div>
+  <div class="header-details_menu">
+    <div class="menu-block">
+      @for (menu of menuList; track $index) {
+      <ul class="list">
+        <li class="item">{{ menu | uppercase }}</li>
+      </ul>
+      }
+    </div>
+    <div class="header-details_contact">
+      <div class="contact-icon"></div>
+      <div class="contact-info">
+        <p class="city">Город, название улицы, дом 1</p>
+        <p class="number">+7 (000) 000-00-00</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  // padding
+  --g-padding5: 5px;
+  --g-padding10: 10px;
+  --g-padding15: 15px;
+  --g-padding20: 20px;
+  --g-padding30: 30px;
+  --g-padding40: 40px;
+  --g-padding50: 50px;
+  --g-padding60: 60px;
+  // margin
+  --g-margin5: 5px;
+  --g-margin10: 10px;
+  --g-margin15: 15px;
+  --g-margin20: 20px;
+  --g-margin30: 30px;
+  --g-margin40: 40px;
+  --g-margin50: 50px;
+  --g-margin60: 60px;
+  // background
+  --g-background: black;
+  --g-background-white: #fff;
+  --g-background-brand: rgb(120, 138, 75);
+  --g-background-brand2: rgb(205, 134, 79);
+  // font-size
+  --g-font-size28: 28px;
+  --g-font-size25: 25px;
+  --g-font-size21: 21px;
+  --g-font-size17: 17px;
+  --g-font-size14: 14px;
+  // font-family
+  --g-font-family-Oranienbaum: Oranienbaum, serif;
+  --g-font-family-Montserrat: Montserrat, sans-serif;
+  // color
+  --g-colorF: #fff;
+  // gap
+  --g-gap8: 8px;
+  --g-gap30: 30px;
+}
