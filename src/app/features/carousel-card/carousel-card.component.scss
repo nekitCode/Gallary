@@ -73,8 +73,8 @@
   cursor: pointer;
 }
 .btn-visit {
-  background-color: var(--g-background-brand);
+  background-color: red !important;
 }
-.btn-visit:hover {
-  background-color: var(--g-background-brand2);
-}
+// .btn-visit:hover {
+//   background-color: var(--g-background-brand2);
+// }
