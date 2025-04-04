@@ -1,16 +1,12 @@
 <div class="card-wrapper">
   <div class="header">
-    <p class="text">название выставки</p>
+    <p class="text">{{ carouselProperty.name }}</p>
   </div>
   <div class="description-block">
-    <img src="../../../assets/v2.jpg" alt="" class="image" />
+    <img [src]="carouselProperty.img" alt="" class="image"/>
     <div class="description-content">
-      <p class="title">
-        Примерное, краткое описание художественной выставки. Текст сайта
-        является редактируемым через СУ сайтом
-      </p>
-      <p class="date">{{ "22 апреля 2024" | uppercase }}</p>
-      <!-- <button class="btn btn-visit">Посетить выставку</button> -->
+      <p class="title">{{ carouselProperty.description }}</p>
+      <p class="date">{{ carouselProperty.date | uppercase }}</p>
       <app-button className="btn-visit" text="Посетить выставку"></app-button>
     </div>
   </div>

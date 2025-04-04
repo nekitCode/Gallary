@@ -1,7 +1,43 @@
-<div class="carousel-card-wrapper">
-  @for (imgItem of imageList; track $index) {
-  <div>
-    <app-carousel-card></app-carousel-card>
+<div class="carousel-outer-wrapper">
+  <div class="text-overlay">
+    <div class="title">{{ currentItem()?.name }}</div>
+    <p class="description">{{ currentItem()?.description }}</p>
+    <p class="date">{{ currentItem()?.date | uppercase }}</p>
+    <app-button text="Посетить выставку"></app-button>
   </div>
-  }
+  <div class="carousel-wrapper">
+    @if (loading()) {
+      <div class="loading-spinner">Loading...</div>
+    } @else {
+
+      <div #container class="carousel-container"
+           (mouseenter)="pause()"
+           (mouseleave)="resume()"
+           (touchstart)="onTouchStart($event)"
+           (touchmove)="onTouchMove($event)"
+           (touchend)="onTouchEnd()">
+
+        <div #track class="carousel-track" [style.transform]="transformValue()">
+          @for (item of list; track item.id; let i = $index) {
+            <div class="carousel-slide" [class.active]="currentIndex() === i">
+              <div class="image-container">
+                <img [src]="item.img" [alt]="item.name" class="slide-image">
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button (click)="prev()" class="control-btn prev">‹</button>
+        <button (click)="next()" class="control-btn next">›</button>
+      </div>
+
+      <div class="carousel-dots">
+        @for (item of list; track item.id; let i = $index) {
+          <button (click)="goTo(i)" [class.active]="currentIndex() === i"></button>
+        }
+      </div>
+    }
+  </div>
 </div>

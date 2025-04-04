@@ -30,6 +30,7 @@
   --g-background-white: #fff;
   --g-background-brand: rgb(120, 138, 75);
   --g-background-brand2: rgb(205, 134, 79);
+  --g-background-form: rgb(28, 28, 28, 1);
   // font-size
   --g-font-size28: 28px;
   --g-font-size25: 25px;
@@ -41,7 +42,14 @@
   --g-font-family-Montserrat: Montserrat, sans-serif;
   // color
   --g-colorF: #fff;
+  --g-colorB: #000;
   // gap
   --g-gap8: 8px;
   --g-gap30: 30px;
 }
+
+body {
+  background-color: var(--g-background);
+  color: var(--g-colorF);
+}
+
