@@ -1,8 +1,8 @@
 .card-wrapper {
   position: relative;
   overflow: hidden;
-  width: 635px;
-  height: 610px;
+  width: 600px;
+  height: 580px;
   border-left: 1px solid rgb(59, 59, 59);
   background-color: antiquewhite;
 
@@ -31,7 +31,7 @@
 
 .image {
   width: 100%;
-  height: auto;
+  //height: 600px;
   transition: transform 0.9s ease-in-out;
 }
 
@@ -56,11 +56,13 @@
   font-size: 17px;
   line-height: 35px;
 }
+
 .date {
   font-family: var(--g-font-family-Oranienbaum);
   font-size: 35px;
   margin-top: var(--g-margin30);
 }
+
 .btn {
   margin-top: var(--g-margin30);
   padding: 28px var(--g-margin50);
@@ -72,9 +74,7 @@
   border: none;
   cursor: pointer;
 }
+
 .btn-visit {
   background-color: red !important;
 }
-// .btn-visit:hover {
-//   background-color: var(--g-background-brand2);
-// }
