@@ -1,19 +1,11 @@
-export enum EMenuList {
-  MAIN = 'главная',
-  ABOUT_US = 'О нас',
-  SERVICES = 'услуги',
-  CONTACT = 'контакты',
-  QUESTION_AND_ANSWER = 'вопросы и ответы',
-  GALLERY = 'галерея',
-  PRODUCTS = 'продукты',
-}
+import { PATH_ROUT } from '../../index.constants';
+import { EMenuList, MenuList } from '../../services/header.service';
 
-export const menuList: string[] = [
-  EMenuList.MAIN,
-  EMenuList.ABOUT_US,
-  EMenuList.SERVICES,
-  EMenuList.CONTACT,
-  EMenuList.QUESTION_AND_ANSWER,
-  EMenuList.GALLERY,
-  // EMenuList.PRODUCTS,
+export const menuList: MenuList[] = [
+  { id: 0, name: EMenuList.MAIN, path: '' },
+  { id: 1, name: EMenuList.ABOUT_US, path: '' },
+  { id: 2, name: EMenuList.SERVICES, path: '' },
+  { id: 3, name: EMenuList.CONTACT, path: PATH_ROUT.CONTACT },
+  { id: 4, name: EMenuList.QUESTION_AND_ANSWER, path: '' },
+  { id: 5, name: EMenuList.GALLERY, path: '' },
 ];

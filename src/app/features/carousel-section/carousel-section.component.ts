@@ -1,31 +1,30 @@
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
-  Component,
-  signal,
-  viewChild,
-  OnInit,
-  effect,
-  DestroyRef,
   inject,
+  effect,
+  signal,
+  OnInit,
   computed,
+  Component,
+  viewChild,
   ElementRef,
-  afterNextRender
+  DestroyRef,
 } from '@angular/core';
-import {ICarousel} from '../../models/carousel';
-import {ImageService} from '../../services/carousel.service';
-import {ButtonComponent} from '../../shared/button/button.component';
-import {CarouselCardComponent} from '../carousel-card/carousel-card.component';
+import { ICarousel } from '../../models/carousel';
+import { ImageService } from '../../services/carousel.service';
+import { ButtonComponent } from '../../shared/button/button.component';
 
 @Component({
   selector: 'app-carousel-section',
   standalone: true,
-  imports: [CommonModule, CarouselCardComponent, ButtonComponent],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './carousel-section.component.html',
   styleUrl: './carousel-section.component.scss',
 })
 export class CarouselSectionComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
-  private container = viewChild.required<ElementRef<HTMLDivElement>>('container');
+  private container =
+    viewChild.required<ElementRef<HTMLDivElement>>('container');
   private track = viewChild.required<ElementRef<HTMLDivElement>>('track');
 
   list: ICarousel[] = [];
@@ -46,7 +45,6 @@ export class CarouselSectionComponent implements OnInit {
   private autoPlayTimer: any;
   private readonly SWIPE_THRESHOLD = 50;
 
-
   constructor(private imageService: ImageService) {
     this.destroyRef.onDestroy(() => {
       this.stopAutoPlay();
@@ -58,12 +56,9 @@ export class CarouselSectionComponent implements OnInit {
         this.restartAutoPlay();
       }
     });
-    console.log('render constructor');
-
   }
 
   ngOnInit() {
-    console.log('render oninit');
     this.imageService.getImages().subscribe({
       next: (data) => {
         this.list = data;
@@ -85,7 +80,6 @@ export class CarouselSectionComponent implements OnInit {
   private startAutoPlay() {
     this.stopAutoPlay();
     if (this.isPaused || this.list.length <= 1) return;
-
 
     this.autoPlayTimer = setInterval(() => {
       this.next();
@@ -155,15 +149,13 @@ export class CarouselSectionComponent implements OnInit {
   }
 
   next() {
-    this.currentIndex.update(idx =>
-      (idx + 1) % this.list.length
-    );
+    this.currentIndex.update((idx) => (idx + 1) % this.list.length);
     this.getCurrentItem(this.list[this.currentIndex()]);
   }
 
   prev() {
-    this.currentIndex.update(idx =>
-      (idx - 1 + this.list.length) % this.list.length
+    this.currentIndex.update(
+      (idx) => (idx - 1 + this.list.length) % this.list.length
     );
     this.getCurrentItem(this.list[this.currentIndex()]);
   }
@@ -173,6 +165,6 @@ export class CarouselSectionComponent implements OnInit {
   }
 
   getCurrentItem(item: ICarousel) {
-    this.currentItem.set(item)
+    this.currentItem.set(item);
   }
 }

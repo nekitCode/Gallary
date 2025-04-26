@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-// constants
+import { MenuList } from '../../services/header.service';
 import { menuList } from './header-details.constants';
 
 @Component({
@@ -11,5 +11,5 @@ import { menuList } from './header-details.constants';
   styleUrl: './header-details.component.scss',
 })
 export class headerDetailsComponent {
-  menuList: string[] = menuList;
+  menuList: MenuList[] = menuList;
 }

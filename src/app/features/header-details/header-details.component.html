@@ -10,9 +10,11 @@
   </div>
   <div class="header-details_menu">
     <div class="menu-block">
-      @for (menu of menuList; track $index) {
+      @for (menu of menuList; track menu.id) {
       <ul class="list">
-        <li class="item">{{ menu | uppercase }}</li>
+        <a [href]="menu.path" class="contact-link">
+          <li class="item">{{ menu.name | uppercase }}</li>
+        </a>
       </ul>
       }
     </div>

@@ -54,6 +54,10 @@
     flex-wrap: wrap;
     column-gap: var(--g-gap8);
 
+    .contact-link {
+      text-decoration: none;
+    }
+
     .list {
       list-style-type: none;
 
@@ -61,6 +65,7 @@
         padding: var(--g-padding5) var(--g-padding20);
         font-size: var(--g-font-size14);
         font-weight: 200;
+        color: var(--g-colorF);
         cursor: pointer;
       }
     }
