@@ -58,7 +58,11 @@
 
 .text-overlay {
   padding: 0 2rem 2rem 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   color: var(--g-colorF);
 
   & .title {
@@ -97,7 +101,7 @@
 }
 
 .control-btn {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
   border: none;
   width: 40px;
   height: 40px;
@@ -112,7 +116,7 @@
 }
 
 .control-btn:hover {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .carousel-dots {
@@ -131,7 +135,7 @@
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   padding: 0;
   transition: all 0.3s;
@@ -163,5 +167,27 @@
 
   .carousel-controls {
     display: none;
+  }
+}
+
+@media (max-width: 765px) {
+  .carousel-outer-wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+  .text-overlay {
+    display: none;
+  }
+}
+
+@media (min-width: 766px) and (max-width: 990px) {
+  .carousel-outer-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
   }
 }

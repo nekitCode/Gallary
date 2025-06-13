@@ -13,7 +13,7 @@ export class ButtonComponent {
   @Input() colorSchema?: 'primary' | 'secondary' | 'brand' | 'brand2' = 'brand';
   @Input() typeBtn: 'button' | 'submit' | 'reset' = 'button';
   @Output() onClick = new EventEmitter<void>();
-  @Input() className?: string;
+  @Input() className?: string = '';
 
   handleClick() {
     this.onClick.emit();

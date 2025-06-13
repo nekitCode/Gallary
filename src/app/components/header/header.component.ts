@@ -9,6 +9,4 @@ import { HeaderSectionComponent } from '../../features/header-section/header-sec
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
-  header = 'Header';
-}
+export class HeaderComponent {}

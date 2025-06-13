@@ -1,7 +1,7 @@
-<div class='footer-wrapper'>
-	<div class="footer-contact-wrapper">
+<div class="footer-wrapper">
+  <div class="footer-contact-wrapper">
     <div class="footer-contact-title">
-      <p>{{'контакты' | uppercase}}</p>
+      <p>{{ "контакты" | uppercase }}</p>
     </div>
     <div class="footer-contact">
       <div class="phone-container">
@@ -14,20 +14,27 @@
       </div>
       <div class="email-container">
         <div class="email-icon"></div>
-        <p>{{ 'text@mail.ru' }}</p>
+        <p>{{ "text@mail.ru" }}</p>
       </div>
     </div>
   </div>
   <div class="footer-form-wrapper">
     <form action="" class="footer-form">
       <div class="input-container">
-        <input type="text" placeholder="Ваше имя*" class="text-form">
-        <input type="text" placeholder="Телефон*" class="phone-form">
+        <input type="text" placeholder="Ваше имя*" class="text-form" />
+        <input type="text" placeholder="Телефон*" class="phone-form" />
       </div>
-      <textarea name="" id="" cols="30" rows="7" placeholder="Комментарий" class="comments-form"></textarea>
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="7"
+        placeholder="Комментарий"
+        class="comments-form"
+      ></textarea>
     </form>
     <form action="" class="footer-form-checkbox-wrapper">
-      <input type="checkbox">
+      <input type="checkbox" />
       <label>Ознакомлен(на) с пользовательским соглашением</label>
     </form>
     <app-button [text]="'Оставить заявку'"></app-button>

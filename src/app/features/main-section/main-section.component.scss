@@ -71,3 +71,192 @@
     }
   }
 }
+
+@media (max-width: 765px) {
+  .main-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 75px;
+    padding: var(--g-padding40) var(--g-padding20);
+    margin: 0;
+  }
+
+  .social-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+    padding-bottom: var(--g-padding20);
+    .social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--g-colorF);
+      color: var(--g-colorF);
+    }
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .text-title {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 200;
+        color: gold;
+      }
+
+      .text-name {
+        font-size: 60px;
+        margin-top: var(--g-margin20);
+        font-family: var(--g-font-family-Oranienbaum);
+        text-transform: uppercase;
+        font-weight: 200;
+        color: var(--g-colorF);
+      }
+
+      .text-description-block {
+        align-items: center;
+      }
+
+      .text-description {
+        text-align: center;
+        font-size: var(--g-font-size14);
+        font-weight: 200;
+        margin-top: var(--g-margin10);
+        color: var(--g-colorF);
+      }
+    }
+    .btn-wrapper {
+      width: 100%;
+      flex-direction: column;
+      row-gap: var(--g-gap30);
+      margin-top: var(--g-margin20);
+
+      .btn {
+        padding: 28px var(--g-margin50);
+        font-size: var(--g-font-size17);
+        font-family: var(--g-font-family-Oranienbaum);
+        text-transform: uppercase;
+        font-weight: 200;
+        color: var(--g-colorF);
+        border: none;
+        cursor: pointer;
+      }
+      .btn-visit {
+        background-color: var(--g-background-brand);
+      }
+      .btn-about {
+        background-color: var(--g-background-brand2);
+      }
+    }
+  }
+}
+
+@media (min-width: 766px) and (max-width: 990px) {
+  .main-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 75px;
+    padding: var(--g-padding40) var(--g-padding20);
+    margin: 0;
+  }
+
+  .social-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 20px;
+    padding-bottom: var(--g-padding20);
+    .social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      border: 1px solid var(--g-colorF);
+      color: var(--g-colorF);
+    }
+  }
+
+  .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: unset;
+    align-items: center;
+    width: 100%;
+
+    .text-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .text-title {
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 200;
+        color: gold;
+      }
+
+      .text-name {
+        font-size: 120px;
+        margin-top: var(--g-margin20);
+        font-family: var(--g-font-family-Oranienbaum);
+        text-transform: uppercase;
+        font-weight: 200;
+        color: var(--g-colorF);
+      }
+
+      .text-description-block {
+        align-items: center;
+      }
+
+      .text-description {
+        text-align: center;
+        font-size: var(--g-font-size17);
+        font-weight: 200;
+        margin-top: var(--g-margin10);
+        color: var(--g-colorF);
+      }
+    }
+    .btn-wrapper {
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      row-gap: 0;
+      column-gap: var(--g-gap30);
+      margin-top: var(--g-margin20);
+
+      .btn {
+        width: 100%;
+        padding: 28px var(--g-margin50);
+        font-size: var(--g-font-size17);
+        font-family: var(--g-font-family-Oranienbaum);
+        text-transform: uppercase;
+        font-weight: 200;
+        color: var(--g-colorF);
+        border: none;
+        cursor: pointer;
+      }
+      .btn-visit {
+        background-color: var(--g-background-brand);
+      }
+      .btn-about {
+        background-color: var(--g-background-brand2);
+      }
+    }
+  }
+}
