@@ -1,0 +1,69 @@
+.sidebar {
+  position: fixed;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(245, 245, 245, 1);
+  color: var(--g-colorF);
+  transition: right 0.9s ease;
+  padding: 20px;
+}
+
+body .sidebar {
+  overflow-y: hidden;
+}
+
+.sidebar.active {
+  right: 0;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar ul li:not(:first-child) {
+  margin: 16px 0;
+}
+.sidebar ul li a {
+  font-size: 25px;
+  font-family: var(--g-font-family-Oranienbaum);
+  color: var(--g-colorB);
+  text-decoration: none;
+}
+.toggle-btn {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--g-background-brand);
+  border: none;
+
+  cursor: pointer;
+  margin: 20px;
+
+  .line-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    &__line {
+      width: 20px;
+      border: 1px solid var(--g-colorF);
+    }
+  }
+}
+.close-btn {
+  position: relative;
+  top: -20px;
+  left: -70px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  font-size: 30px;
+  color: white;
+  background-color: var(--g-background-brand);
+  cursor: pointer;
+}
+
+.close-btn.active {
+  visibility: hidden;
+}

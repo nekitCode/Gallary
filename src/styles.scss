@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,6 +36,8 @@
   --g-font-size21: 21px;
   --g-font-size17: 17px;
   --g-font-size14: 14px;
+  --g-font-size13: 13px;
+  --g-font-size20: 20px;
   // font-family
   --g-font-family-Oranienbaum: Oranienbaum, serif;
   --g-font-family-Montserrat: Montserrat, sans-serif;
@@ -45,6 +46,7 @@
   --g-colorB: #000;
   // gap
   --g-gap8: 8px;
+  --g-gap10: 10px;
   --g-gap30: 30px;
 }
 
@@ -52,4 +54,3 @@ body {
   background-color: var(--g-background);
   color: var(--g-colorF);
 }
-

@@ -1,0 +1,25 @@
+<div class="sidebar" [ngClass]="{ active: isOpen }">
+  <button
+    class="close-btn"
+    [ngClass]="{ active: !isOpen }"
+    (click)="toggleSidebar()"
+  >
+    ×
+  </button>
+  <div class="menu-list">
+    <ul>
+      <li><a [href]="PATH.ROOT">Главная</a></li>
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Услуги</a></li>
+      <li><a [href]="PATH.CONTACT">Контакты</a></li>
+    </ul>
+  </div>
+</div>
+
+<button class="toggle-btn" (click)="toggleSidebar()">
+  <div class="line-wrapper">
+    <div class="line-wrapper__line"></div>
+    <div class="line-wrapper__line"></div>
+    <div class="line-wrapper__line"></div>
+  </div>
+</button>

@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import {
-  inject,
-  effect,
-  signal,
+  Component,
+  DestroyRef,
+  ElementRef,
   OnInit,
   computed,
-  Component,
+  effect,
+  inject,
+  signal,
   viewChild,
-  ElementRef,
-  DestroyRef,
 } from '@angular/core';
 import { ICarousel } from '../../models/carousel';
 import { ImageService } from '../../services/carousel.service';
