@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { PATH_ROUT } from '../../index.constants';
 
 @Component({
-  selector: 'app-menu',
   standalone: true,
+  selector: 'app-menu',
   imports: [CommonModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',

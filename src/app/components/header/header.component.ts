@@ -5,6 +5,7 @@ import { HeaderSectionComponent } from '../../features/header-section/header-sec
 @Component({
   selector: 'app-header',
   standalone: true,
+
   imports: [HeaderSectionComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
