@@ -1,0 +1,50 @@
+<!-- <div class="carousel-container">
+  <div class="carousel">
+    <button class="nav-button prev" (click)="prev()">&lt;</button>
+
+    <div class="slides-container">
+      <div
+        class="slides-track"
+        [style.transform]="transformValue"
+        [style.width]="trackWidth"
+        [style.transitionDuration]="transitionDuration + 'ms'"
+      >
+        @for (slide of slides; track slide; let i = $index) {
+        <div class="slide" [style.flex]="'0 0 ' + 100 / visibleSlides + '%'">
+          <img [src]="slide.image" alt="Carousel image" />
+        </div>
+        }
+      </div>
+    </div>
+
+    <button class="nav-button next" (click)="next()">&gt;</button>
+  </div>
+
+  @if (images.length > visibleSlides) {
+  <div class="indicators">
+    @for (image of images; track $index; let i = $index) {
+    <span
+      class="indicator"
+      [class.active]="i === currentIndex"
+      (click)="goTo(i)"
+    ></span>
+    }
+  </div>
+  }
+</div> -->
+
+<section class="wrapper-gallery-section">
+  <div>
+    <div class="bread-crumbs">
+      <a href="">Главная</a> / <a href="">Галерея</a>
+    </div>
+    <h1 class="gallery-title">Галерея</h1>
+    <div class="gallery-block">
+      @for (image of images; track $index; let i = $index) {
+      <div class="image-item">
+        <img [src]="image" alt="images" />
+      </div>
+      }
+    </div>
+  </div>
+</section>
