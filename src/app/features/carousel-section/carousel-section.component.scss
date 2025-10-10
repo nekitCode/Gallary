@@ -57,6 +57,9 @@
 }
 
 .text-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0 2rem 2rem 0;
   background: linear-gradient(
     to top,

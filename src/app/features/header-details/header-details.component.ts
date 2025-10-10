@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { MenuList } from '../../services/header.service';
+import { MenuList } from '../../models/header';
 import { MenuComponent } from '../menu/menu.component';
 import { menuList } from './header-details.constants';
 

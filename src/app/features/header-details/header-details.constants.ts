@@ -1,5 +1,5 @@
 import { PATH_ROUT } from '../../index.constants';
-import { EMenuList, MenuList } from '../../services/header.service';
+import { EMenuList, MenuList } from '../../models/header';
 
 export const menuList: MenuList[] = [
   { id: 0, name: EMenuList.MAIN, path: '' },

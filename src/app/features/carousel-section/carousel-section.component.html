@@ -1,8 +1,10 @@
 <div class="carousel-outer-wrapper">
   <div class="text-overlay">
-    <div class="title">{{ currentItem()?.name }}</div>
-    <p class="description">{{ currentItem()?.description }}</p>
-    <p class="date">{{ currentItem()?.date | uppercase }}</p>
+    <div>
+      <div class="title">{{ currentItem()?.name }}</div>
+      <p class="description">{{ currentItem()?.description }}</p>
+      <p class="date">{{ currentItem()?.date | uppercase }}</p>
+    </div>
     <app-button text="Посетить выставку"></app-button>
   </div>
   <div class="carousel-wrapper">
