@@ -1,0 +1,273 @@
+.wrapper-gallery-section {
+  margin: auto 100px;
+  padding: 160px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .bread-crumbs {
+    width: 100%;
+  }
+
+  & .bread-crumbs a {
+    color: var(--g-colorF);
+  }
+
+  & .gallery-title {
+    margin-top: var(--g-margin70);
+    margin-bottom: var(--g-margin30);
+    font-size: 124px;
+    font-family: var(--g-font-family-Oranienbaum);
+  }
+
+  & .gallery-wrapper {
+    width: 100%;
+  
+    & .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      padding: 0;
+
+      .image-list {
+        width: 100%;
+        padding: 0;
+      }
+
+      .image-container {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        width: 100%;
+        aspect-ratio: 1;
+      }
+
+      .image-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .image-container:hover {
+        transform: scale(1.05) rotate(1deg);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+      }
+
+      .image-container:hover::before {
+        opacity: 1;
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .image-container:hover .image {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// Стили для модального окна
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  max-height: 100vh;
+}
+
+.modal-close {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  background: none;
+  border: none;
+  font-size: 35px;
+  cursor: pointer;
+  color: #444;
+  z-index: 1001;
+
+  &:hover {
+    color: #5b5b5b;
+  }
+}
+
+// Стили для карусели
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.carousel-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  max-height: 70vh;
+}
+
+.carousel-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carousel-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+// Стили для миниатюр
+.carousel-thumbnails {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.thumbnail-container {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+
+  &.active {
+    border-color: #007bff;
+  }
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Адаптивность
+@media (max-width: 765px) {
+  .wrapper-gallery-section {
+    margin: auto var(--g-padding30);
+    padding: var(--g-padding70) var(--g-padding20);
+
+    .gallery-wrapper {
+      .gallery-container {
+       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+       gap: 15px;
+       margin-bottom: var(--g-margin20);
+     }
+   }
+
+    & .bread-crumbs {
+      display: none;
+    }
+
+    & .gallery-title-wrapper {
+      display: flex;
+      justify-content: center;
+
+      & .gallery-title {
+        margin-top: 0;
+        font-size: 70px;
+      }
+    }
+
+    & .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+        width: 100%;
+        padding: 0;
+
+        .image-list {
+          width: 100%;
+          padding: 0;
+        }
+
+      & .image-container {
+        & .image {
+          cursor: auto;
+        }
+      }
+    }
+  }
+  .carousel-container {
+    gap: 10px;
+  }
+
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .carousel-image-container {
+    min-height: 300px;
+  }
+
+  .thumbnail-container {
+    display: none;
+  }
+}
+
+@media (min-width: 766px) and (max-width: 990px) {
+  .wrapper-gallery-section {
+    margin: auto 30px;
+    padding: 80px 20px;
+  }
+  
+  .gallery-wrapper {
+    & .gallery-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+  }
+}

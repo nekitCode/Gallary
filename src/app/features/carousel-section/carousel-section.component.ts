@@ -15,8 +15,8 @@ import { ImageService } from '../../services/carousel.service';
 import { ButtonComponent } from '../../shared/button/button.component';
 
 @Component({
-  selector: 'app-carousel-section',
   standalone: true,
+  selector: 'app-carousel-section',
   imports: [CommonModule, ButtonComponent],
   templateUrl: './carousel-section.component.html',
   styleUrl: './carousel-section.component.scss',

@@ -1,0 +1,50 @@
+<section class="wrapper-gallery-section">
+  <div class="bread-crumbs">
+    <a [href]="path.ROOT" >Главная</a> / <a [href]="path.GALLERY" >Галерея</a>
+  </div>
+  <div class="gallery-wrapper">
+  <div class="gallery-title-wrapper">
+    <h1 class="gallery-title">Галерея</h1>
+  </div>
+    <div class="gallery-container">
+      @for (image of images; track $index; let i = $index) {
+      <div class="image-list">
+        <div class="image-container" (click)="openModal(i)">
+          <img [src]="image.img" alt="images" class="image" loading="lazy"/>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+    <!-- Модальное окно -->
+    @if (isModalOpen()) {
+    <div class="modal-overlay" (click)="closeModal($event)">
+      <button class="modal-close" (click)="closeModal($event)">×</button>
+      <div class="modal-content">
+
+        <div class="carousel-container">
+          <button class="carousel-btn carousel-btn-prev" (click)="prevImage($event)">‹</button>
+
+          <div class="carousel-image-container">
+            <img [src]="images[currentImageIndex()].img" alt="Carousel image" class="carousel-image" />
+          </div>
+
+          <button class="carousel-btn carousel-btn-next" (click)="nextImage($event)">›</button>
+        </div>
+
+        <div class="carousel-thumbnails">
+          @for (image of images; track $index; let i = $index) {
+          <div
+            class="thumbnail-container"
+            [class.active]="i === currentImageIndex()"
+            (click)="selectImage(i, $event)"
+          >
+            <img [src]="image.img" alt="Thumbnail" class="thumbnail" />
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+    }
+</section>
