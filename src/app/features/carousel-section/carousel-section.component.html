@@ -13,11 +13,11 @@
     } @else {
 
       <div #container class="carousel-container"
-           (mouseenter)="pause()"
-           (mouseleave)="resume()"
-           (touchstart)="onTouchStart($event)"
-           (touchmove)="onTouchMove($event)"
-           (touchend)="onTouchEnd()">
+          (mouseenter)="pause()"
+          (mouseleave)="resume()"
+          (touchstart)="onTouchStart($event)"
+          (touchmove)="onTouchMove($event)"
+          (touchend)="onTouchEnd()">
 
         <div #track class="carousel-track" [style.transform]="transformValue()">
           @for (item of list; track item.id; let i = $index) {
