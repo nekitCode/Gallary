@@ -1,9 +1,10 @@
-.wrapper-gallery-section {
+ .wrapper-gallery-section {
   margin: auto 100px;
   padding: 160px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: normal;
 
   & .bread-crumbs {
     width: 100%;
@@ -22,7 +23,7 @@
 
   & .gallery-wrapper {
     width: 100%;
-  
+
     & .gallery-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -200,11 +201,11 @@
 
     .gallery-wrapper {
       .gallery-container {
-       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-       gap: 15px;
-       margin-bottom: var(--g-margin20);
-     }
-   }
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: var(--g-margin20);
+      }
+    }
 
     & .bread-crumbs {
       display: none;
@@ -221,16 +222,16 @@
     }
 
     & .gallery-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      width: 100%;
+      padding: 0;
+
+      .image-list {
         width: 100%;
         padding: 0;
-
-        .image-list {
-          width: 100%;
-          padding: 0;
-        }
+      }
 
       & .image-container {
         & .image {
@@ -263,7 +264,7 @@
     margin: auto 30px;
     padding: 80px 20px;
   }
-  
+
   .gallery-wrapper {
     & .gallery-container {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

@@ -1,6 +1,7 @@
 .header-details_wrapper {
   display: flex;
   border-bottom: 1px solid var(--g-background-white);
+  line-height: normal;
 }
 
 .header-details_log {
@@ -11,6 +12,7 @@
   padding: 40px 50px;
   background-color: var(--g-background-brand);
   color: aliceblue;
+  text-decoration: none;
 
   .logo {
     display: flex;
@@ -82,12 +84,23 @@
   white-space: pre;
 
   .contact-icon {
-    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-shrink: 0;
     width: 60px;
     height: 60px;
     background-color: #cd864f;
     border-radius: 50px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: brightness(0) invert(1); /* делает иконки белыми */
+    }
   }
 
   .contact-info {
@@ -101,6 +114,11 @@
       font-size: var(--g-font-size28);
       font-family: var(--g-font-family-Oranienbaum);
       font-weight: 200;
+    }
+
+    .contact-item {
+      text-decoration: none;
+      color: var(--g-colorF);
     }
   }
 }

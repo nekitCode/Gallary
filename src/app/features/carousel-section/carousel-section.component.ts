@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
 import {
   Component,
   DestroyRef,
@@ -9,23 +9,23 @@ import {
   inject,
   signal,
   viewChild,
-} from '@angular/core';
-import { ICarousel } from '../../models/carousel';
-import { ImageService } from '../../services/carousel.service';
-import { ButtonComponent } from '../../shared/button/button.component';
+} from "@angular/core";
+import { ICarousel } from "../../models/carousel";
+import { ImageService } from "../../services/carousel.service";
+import { ButtonComponent } from "../../shared/button/button.component";
 
 @Component({
   standalone: true,
-  selector: 'app-carousel-section',
+  selector: "app-carousel-section",
   imports: [CommonModule, ButtonComponent],
-  templateUrl: './carousel-section.component.html',
-  styleUrl: './carousel-section.component.scss',
+  templateUrl: "./carousel-section.component.html",
+  styleUrl: "./carousel-section.component.scss",
 })
 export class CarouselSectionComponent implements OnInit {
   private destroyRef = inject(DestroyRef);
   private container =
-    viewChild.required<ElementRef<HTMLDivElement>>('container');
-  private track = viewChild.required<ElementRef<HTMLDivElement>>('track');
+    viewChild.required<ElementRef<HTMLDivElement>>("container");
+  private track = viewChild.required<ElementRef<HTMLDivElement>>("track");
 
   list: ICarousel[] = [];
 
@@ -114,7 +114,7 @@ export class CarouselSectionComponent implements OnInit {
     this.startX = event.touches[0].clientX;
     this.currentX = this.startX;
     this.isDragging = true;
-    this.track().nativeElement.style.transition = 'none';
+    this.track().nativeElement.style.transition = "none";
   }
 
   onTouchMove(event: TouchEvent) {
@@ -132,7 +132,7 @@ export class CarouselSectionComponent implements OnInit {
     if (!this.isDragging) return;
 
     this.isDragging = false;
-    this.track().nativeElement.style.transition = 'transform 1s ease';
+    this.track().nativeElement.style.transition = "transform 1s ease";
 
     const diff = this.currentX - this.startX;
     if (Math.abs(diff) > this.SWIPE_THRESHOLD) {
@@ -155,13 +155,14 @@ export class CarouselSectionComponent implements OnInit {
 
   prev() {
     this.currentIndex.update(
-      (idx) => (idx - 1 + this.list.length) % this.list.length
+      (idx) => (idx - 1 + this.list.length) % this.list.length,
     );
     this.getCurrentItem(this.list[this.currentIndex()]);
   }
 
   goTo(index: number) {
     this.currentIndex.set(index);
+    this.currentItem.set(this.list[index]);
   }
 
   getCurrentItem(item: ICarousel) {

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-main-section',
+  selector: "app-main-section",
   standalone: true,
   imports: [],
-  templateUrl: './main-section.component.html',
-  styleUrl: './main-section.component.scss',
+  templateUrl: "./main-section.component.html",
+  styleUrl: "./main-section.component.scss",
 })
 export class MainSectionComponent {
-  title = 'main-section';
+  title = "main-section";
 }

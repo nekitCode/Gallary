@@ -12,6 +12,7 @@
   overflow: hidden;
   margin-left: auto;
   margin-right: 0;
+  padding: 2rem 0;
 }
 
 .loading-spinner {
@@ -171,6 +172,9 @@
   .carousel-controls {
     display: none;
   }
+  .carousel-dots {
+    display: none;
+  }
 }
 
 @media (max-width: 765px) {
@@ -183,6 +187,9 @@
   .text-overlay {
     display: none;
   }
+  .carousel-dots {
+    display: none;
+  }
 }
 
 @media (min-width: 766px) and (max-width: 990px) {
@@ -192,5 +199,9 @@
     width: 100%;
     min-height: 0;
     padding: 0;
+  }
+
+  .carousel-dots {
+    display: none;
   }
 }

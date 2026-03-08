@@ -6,22 +6,31 @@
 @use "@angular/material" as mat;
 
 html {
-  // @include mat.theme(
-  //   (
-  //     color: (
-  //       primary: mat.$azure-palette,
-  //       tertiary: mat.$blue-palette,
-  //     ),
-  //     typography: Roboto,
-  //     density: 0,
-  //   )
-  // );
-  @include mat.dialog-overrides(
+  color-scheme: light dark;
+  @include mat.theme(
     (
-      container-color: rgba(0, 0, 0, 0.8),
-      // container-min-width: '100%'
+      color: mat.$violet-palette,
+      typography: Roboto,
+      density: 0,
     )
   );
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
 }
 
 body {
@@ -96,13 +105,4 @@ body {
 body {
   background-color: var(--g-background);
   color: var(--g-colorF);
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
