@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+
 import {
   Component,
   contentChild,
@@ -14,7 +14,7 @@ import { ImageService } from "../../services/carousel.service";
 
 @Component({
   selector: "app-gallery-section",
-  imports: [CommonModule],
+  imports: [],
   templateUrl: "./gallery-section.component.html",
   styleUrl: "./gallery-section.component.scss",
 })
