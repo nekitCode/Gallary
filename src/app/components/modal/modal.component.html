@@ -1,0 +1,31 @@
+<div class="modal-overlay">
+  <button class="modal-close" (click)="closeModal()">×</button>
+  <div class="modal-content">
+
+    <div class="carousel-container">
+      @if(images.length > 1) {
+        <button class="carousel-btn carousel-btn-prev" (click)="prevImage($event)">‹</button>
+      }
+
+      <div class="carousel-image-container">
+        <img [src]="images[setImageIndex()].img" alt="Carousel image" class="carousel-image" />
+      </div>
+
+      @if(images.length > 1) {
+        <button class="carousel-btn carousel-btn-next" (click)="nextImage($event)">›</button>
+      }
+    </div>
+
+    <div class="carousel-thumbnails">
+      @for (image of images; track $index; let i = $index) {
+      <div
+        class="thumbnail-container"
+        [class.active]="i === setImageIndex()"
+        (click)="selectImage(i, $event)"
+      >
+        <img [src]="image.img" alt="Thumbnail" class="thumbnail" />
+      </div>
+      }
+    </div>
+  </div>
+</div>
