@@ -2,11 +2,12 @@ import { CommonModule } from "@angular/common";
 import { Component, OnInit, signal } from "@angular/core";
 import { ICarousel } from "../../models/carousel";
 import { ImageService } from "../../services/carousel.service";
+import { ModalComponent } from "../../components/modal/modal.component";
 
 @Component({
   standalone: true,
   selector: "app-carousel-section",
-  imports: [CommonModule],
+  imports: [CommonModule, ModalComponent],
   templateUrl: "./carousel-section.component.html",
   styleUrl: "./carousel-section.component.scss",
 })
@@ -17,6 +18,9 @@ export class CarouselSectionComponent implements OnInit {
   loading = signal(true);
   currentIndex = signal(0);
   currentItem = signal<ICarousel | null>(null);
+  modalOpen = signal(false);
+  currentImage = signal<ICarousel[]>([]);
+  currentIndexImage = signal<number>(0);
 
   constructor(private imageService: ImageService) {}
 
@@ -28,9 +32,10 @@ export class CarouselSectionComponent implements OnInit {
 
         this.currentItem.set(this.list[this.currentIndex()]);
       },
-      error: (err) => {
+      error: (error) => {
         this.error.set(true);
         this.loading.set(false);
+        console.log(error);
       },
       complete: () => {
         this.loading.set(false);
@@ -38,7 +43,13 @@ export class CarouselSectionComponent implements OnInit {
     });
   }
 
-  getCurrentItem(item: ICarousel) {
-    console.log(item);
+  getCurrentItem(item: ICarousel, index: number) {
+    this.currentImage.set([item]);
+    this.currentIndexImage.set(0);
+    this.modalOpen.set(true);
+  }
+
+  closeModal() {
+    this.modalOpen.set(false);
   }
 }

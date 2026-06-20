@@ -1,8 +1,8 @@
 import { Component, OnInit, signal } from "@angular/core";
 import { ModalComponent } from "../../components/modal/modal.component";
-import { PATH_ROUT } from "../../index.constants";
 import { ICarousel } from "../../models/carousel";
 import { ImageService } from "../../services/carousel.service";
+import { PATH_ROUT } from "../../index.constants";
 
 @Component({
   selector: "app-gallery-section",

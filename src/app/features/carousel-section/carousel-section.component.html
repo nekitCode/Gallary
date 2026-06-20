@@ -6,13 +6,16 @@
     <div class="carousel-container">
       <div class="carousel-track">
         @for (item of list; track item.id; let i = $index) {
-          <img [src]="item.img" [alt]="item.name" class="slide-image" (click)="getCurrentItem(item)">
+          <img [src]="item.img" [alt]="item.name" class="slide-image" (click)="getCurrentItem(item, i)">
         }
         @for (item of list; track item.id; let i = $index) {
-          <img [src]="item.img" [alt]="item.name" class="slide-image" (click)="getCurrentItem(item)">
+          <img [src]="item.img" [alt]="item.name" class="slide-image" (click)="getCurrentItem(item, i)">
         }
       </div>
     </div>
     }
   </div>
+  @if(modalOpen()) {
+    <app-modal [images]="currentImage()" [currentImageIndex]="currentIndexImage()" (close)="closeModal()"/>
+  }
 </div>

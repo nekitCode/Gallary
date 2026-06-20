@@ -1,5 +1,5 @@
 export interface ICarousel {
-  id: number | string;
+  id: number;
   img: string;
   name: string;
   date: string;

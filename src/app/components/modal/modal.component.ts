@@ -21,11 +21,15 @@ export class ModalComponent implements OnInit, OnDestroy {
   @Input() currentImageIndex: number = 0;
   @Output() close = new EventEmitter<void>();
 
-  public setImageIndex = signal(0);
+  setImageIndex = signal(0);
 
   ngOnInit() {
     document.body.style.overflow = "hidden";
     this.setImageIndex.set(this.currentImageIndex);
+    console.log({
+      images: this.images,
+      currentImageIndex: this.currentImageIndex,
+    });
   }
 
   ngOnDestroy() {
